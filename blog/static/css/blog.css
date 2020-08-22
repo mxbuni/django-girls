@@ -1,25 +1,61 @@
+:root {
+    --main-bg-color: #F6F5F4;
+    --main-container-color: #EDEDED;
+    --main-accent-color: #C25100;
+    --main-text-color: #000000;
+    --accent-text-color: #FFFFFF;
+    --faded-text-color: #828282;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-bg-color: #353535;
+        --main-container-color: #3C3C3C;
+        --main-text-color: #FFFFFF;
+        --faded-text-color: #C9C9C9;
+    }
+}
+
+* {
+    color: var(--main-text-color);
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
 .page-header {
-    background-color: #C25100;
+    background-color: var(--main-accent-color);
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+a, a:hover {
+  color: var(--main-accent-color);
+}
+
+.page-header * {
+    color: var(--accent-text-color);
+}
+
+.page-header h1 {
+    color: var(--accent-text-color);
     font-size: 36pt;
-    text-decoration: none;
+}
+
+.page-header a:hover {
+    color: var(--accent-text-color);
 }
 
 .content {
-    margin-left: 40px;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
 }
 
 .date {
-    color: #828282;
+    color: var(--faded-text-color);
 }
 
 .save {
@@ -28,23 +64,49 @@ h1, h2, h3, h4 {
 
 .post-form textarea, .post-form input {
     width: 100%;
+    background-color: var(--main-container-color);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 10px
+}
+
+input[type=text], input[type=password] {
+    background-color: var(--main-container-color);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 10px
+}
+
+input[type=submit] {
+    color: #000000;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: var(--accent-text-color);
     float: right;
-    font-size: 26pt;
+    font-size: 20pt;
     margin-right: 20px;
 }
 
 .post {
-    margin-bottom: 70px;
-}
-
-.post h2 a, .post h2 a:visited {
-    color: #000000;
+    background-color: var(--main-container-color);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding: 20px;
 }
 
 .comment {
     margin: 20px 0px 20px 20px;
+}
+
+.col-md-8 {
+    width: 100%;
+}
+
+.glyphicon {
+    color: #000000;
+}
+
+.page-header .glyphicon {
+    color: var(--accent-text-color);
 }
